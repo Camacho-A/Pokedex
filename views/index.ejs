@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Pokemon</h1>
+
+<!-- loop to grab each Pokemon name and image -->
+        <% for (let i = 0; i < allPokemon.length; i++){ %>
+            <h2><%=allPokemon[i].name %> </h2> 
+                <img src="<%=allPokemon[i].img %>" alt="Pokemon Name"> 
+                <ul>
+
+                    <!-- loop over the type array to make each one its own bullet point -->
+                    <% const type = allPokemon[i].type %> 
+                        <% for(let j = 0; j < type.length; j++) {%> 
+                            <li>
+                    
+                             <%=type[j]%>
+                            </li>
+                        <% } %>
+               
+                </ul>
+        <% } %>
+
+    </div>
+    
+</body>
+</html>
