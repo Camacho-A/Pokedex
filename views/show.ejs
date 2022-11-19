@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<a href="/pokemon"><button>Back</button></a>
+		<a href="/pokemon/<%=index%>/edit"><button>Edit</button></a>
+		<h1><%=pokemon.name %></h1>
+
+		<img src="<%=pokemon.img %>" />
+
+		<ul>
+			<h4>Type</h4>
+			<!-- loop over the type array to make each one its own bullet point -->
+			<% const type = pokemon.type %> <% for(let i = 0; i < type.length; i++)
+			{%>
+			<li><%=type[i]%></li>
+
+			<% } %>
+		</ul>
+		<ul>
+			<h4>Stats</h4>
+			<li>HP: <%= pokemon.stats.hp %></li>
+			<li>Attack: <%= pokemon.stats.attack %></li>
+			<li>Defense: <%= pokemon.stats.defense %></li>
+            <li>Spattack: <%= pokemon.stats.spattack %></li>
+            <li>Spdefense: <%= pokemon.stats.spdefense %></li>
+            <li>Speed: <%= pokemon.stats.speed %></li>
+		</ul>
+	</body>
+</html>
