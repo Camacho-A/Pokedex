@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Pokemon</h1>
-    <form action="/pokemon" method="POST">
-        Name: <input type="text" name="name">
-        <br>
-        Image: <input type="file" name="image">
-        <br>
-        Type: <input type="text" name="type">
-        <br>
-        Stats: 
-        <ul>
-				<li>HP:
-					<input type="text" name="stats[hp]"  />
-                </li>
-					
-                <li>Attack:
-					<input
-						type="text"
-						name="stats[attack]">
-				
-                </li>
-					
-                <li>Defense:
-					<input
-						type="text"
-						name="stats[defense]"
-					
-					>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pokemon New</title>
+		<link rel="stylesheet" href="/public/styles.css" />
+	</head>
+	<body>
+		<div class="container">
+		<h1 class="title">Add A New Pokemon</h1>
+		<form class="newform" action="/pokemon" method="POST">
+			Name: <input type="text" name="name" />
+			<br />
+			Image: <input type="text" name="image" />
+			<br />
+			Type: <input type="text" name="type" />
+			<br />
+			Stats:
+			<ul class="newlist">
+				<li>
+					HP:
+					<input type="text" name="stats[hp]" />
 				</li>
-    
+
+				<li>
+					Attack:
+					<input type="text" name="stats[attack]" />
+				</li>
+
+				<li>
+					Defense:
+					<input type="text" name="stats[defense]" />
+				</li>
+
+				<li>
+					Spattack:
+					<input type="text" name="stats[spattack]" />
+				</li>
+
+				<li>
+					Spdefense:
+					<input type="text" name="stats[spdefense]" />
+				</li>
+
+				<li>
+					Speed:
+					<input type="text" name="stats[speed]" />
+				</li>
+				
 			</ul>
-        <br>
-        <input type="submit" value="Add New Pokemon">    
-    </form>
-    <a href="/pokemon"><button>Back</button></a>
-</body>
+			<br />
+			<input class="update" type="submit" value="Add New Pokemon" />
+		</form>
+		<a href="/pokemon"><button class="back">Back</button></a>
+	</div>
+	</body>
 </html>

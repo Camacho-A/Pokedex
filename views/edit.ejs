@@ -4,21 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Pokemon Edit</title>
+        <link rel="stylesheet" href="/public/styles.css" />
 	</head>
 	<body>
-		<h1>Update Pokemon</h1>
+        <div class="container">
+		<h1 class="title"> Update <%=pokemon.name %> Information</h1>
 
-		<form action="/pokemon/<%= index %>?_method=PUT" method="POST">
+		<form class="editform" action="/pokemon/<%= index %>?_method=PUT" method="POST">
 			Name: <input type="text" name="name" value="<%= pokemon.name %>" />
 			<br />
 			Image: <input type="text" name="img" value="<%= pokemon.img %>" />
 			<br />
 			Type: <input type="text" name="type" value="<%= pokemon.type %>" />
 			<br />
-			Stats:
-			<br />
-			<ul>
+            Stats:
+			<ul class="editlist">
 				<li>
 					HP:
 					<input type="text" name="stats[hp]" value="<%=pokemon.stats.hp %>" />
@@ -66,8 +67,9 @@
 					/>
 				</li>
 			</ul>
-			<input type="submit" value="Update Pokemon" />
+			<input class="update" type="submit" value="Update Pokemon" />
 		</form>
-		<a href="/pokemon"><button>Back</button></a>
+		<a href="/pokemon"><button class="back">Back Home</button></a>
+        </div>
 	</body>
 </html>

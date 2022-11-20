@@ -5,28 +5,28 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pokemon</title>
+		<link rel="stylesheet" href="/public/styles.css" />
 	</head>
 	<body>
 		<div class="container">
-			<h1>Pokemon Manager</h1>
-			<a href="/pokemon/new"><button>Add New Pokemon</button></a>
-           
+			<h1 class="title">Pokemon Manager</h1>
+			<a href="/pokemon/new"><button class="add">Add a Pokemon</button></a>
 
 			<!-- loop to grab each Pokemon name and image -->
-			<% for (let i = 0; i < 5; i++){ %>
-			<h2><%=allPokemon[i].name %></h2>
-			<a href="/pokemon/<%=i%>">
-				<img src="<%=allPokemon[i].img %>" />
-			</a>
+			<% for (let i = 0; i < allPokemon.length; i++){ %>
+			<div class="pokegrid">
+				<h2 class="name"><%=allPokemon[i].name %></h2>
+				<a href="/pokemon/<%=i%>">
+					<img class="pokeimg" src="<%=allPokemon[i].img %>" />
+				</a>
 
-			<br />
+				<br />
+				<a href="/pokemon/<%= i %>/edit"><button class="edit">Edit</button></a>
 
-			<a href="/pokemon/<%= i %>/edit"><button>Edit</button></a>
-
-			<form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
-				<input type="submit" value="Delete" />
-			</form>
-
+				<form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
+					<input class="delete" type="submit" value="Delete" />
+				</form>
+			</div>
 			<% } %>
 		</div>
 	</body>

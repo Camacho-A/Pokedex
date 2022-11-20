@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(morgan("tiny"))
 app.use(methodOverride("_method"))
 app.use("/static", express.static("public"))
+app.use("/public", express.static("public"))
 
 
 
